@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [50,60,55,78,90,84,65,42,41,82];
+        let data2 = [89,83,74,62];
+        let data3 = [];
+
+        for (let i = 0; i < data.length; i++) {
+            data3[i] = data[i];
+            for(j = 0; j < data2.length; j++){
+                data3[data.length+j] = data2[j];
+            }
+        }
+        console.log(data3)
+
+        //using rest operator
+        //let data3 = [...data, ...data2];
+        //console.log(data3)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

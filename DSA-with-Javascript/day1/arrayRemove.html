@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [50,60,55,78,90,84,65,42,41,82];
+
+        function deleteElement(){
+            let position = parseInt(document.getElementById('position').value);
+            for (let i = position; i < data.length - 1; i++) {
+                    data[i]=data[i+1];
+            }
+            data.length = data.length - 1;
+            console.log(data);
+            
+            // If you want to remove by value and not by position
+            // let newrArray = [];
+            // for (let i = 0; i < data.length; i++) {
+            //     if(position !== data[i]){
+            //         newrArray.push(data[i])
+            //     }
+            // }
+            
+            // console.log(newrArray);
+
+            //using splice remove elemnt using value
+            // for (let i = 0; i < data.length; i++) {
+            //     if(position === data[i]){
+            //         let removedValue = data.splice(i, 1)
+            //         console.log('removed number ' + removedValue);
+            //     }
+            // }
+            // console.log(data)
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="position" placeholder="enter position to be removed.." />
+    <!-- <input type="text" id="newElement" placeholder="enter element..." /> -->
+    <button onclick="deleteElement()">delete element</button>
+</body>
+</html>

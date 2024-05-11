@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [50,60,55,78,90,84,65,42,41,82];
+
+        // for (let i = 0; i < data.length; i++) {
+        //     const element = data[i];
+        //     console.log(element)
+        // }
+
+        let position;
+
+        function getElement(){
+            position = document.getElementById('position').value
+            if(position<data.length && typeof parseInt(position)==='number' && parseInt(position)>=0){
+                alert(data[position])
+            }else{
+                alert("Enter valid input!")
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="position" />
+    <button onclick="getElement()">Get element</button>
+</body>
+</html>

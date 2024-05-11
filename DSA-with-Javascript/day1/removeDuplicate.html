@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [50,60,55,50,82,41,84,41,42,41,82];
+
+        function removeDuplicateElement(){//sahnc //sushl wnjs
+            
+            //using same array with splice and for loop on sorted array
+            console.log(data.sort())
+            for (let i = 0; i < data.length - 1; i++) {
+                if(data[i] === data[i+1]){
+                    data.splice(i + 1, 1);
+                    i--;
+                }
+            }
+            console.log(data);
+
+            //using dufferent array
+            // let uniqueArray = [];
+            // for (let i = 0; i < data.length - 1; i++) {
+            //     if(!uniqueArray.includes(data[i])){
+            //         uniqueArray.push(data[i])
+            //         console.log('old array' + data)
+            //     }
+            // }
+            // console.log('old array' + data)
+            // console.log('uniqueArray' + uniqueArray);
+            
+            // using filter
+            // let uniqueArray = [];
+            // console.log('before ' + data)
+            // uniqueArray = data.filter((item, index) => data.indexOf(item) === index);
+            
+            // console.log('after ' + uniqueArray);
+
+            //using Set 
+            // console.log('before ' + data)
+            // let uniqueArray = [];
+            // uniqueArray = [...new Set(data)]
+            // console.log('after ' + uniqueArray);
+
+            //using reduce
+            // console.log('before ' + data)
+            // let uniqueArray = [];
+            // uniqueArray = data.reduce((acc, cur) => {
+            //     if(!acc.includes(cur)){
+            //         acc.push(cur);
+            //     }
+            //     return acc;
+            // }, [])
+            // console.log('after ' + uniqueArray);
+
+            //using indexOf
+            //let uniqueArray = [];
+            //for (let i = 0; i < data.length - 1; i++) {
+            //    if(uniqueArray.indexOf(data[i]) === -1){
+            //        uniqueArray.push(data[i])
+            //    }
+            //}
+            //console.log('old array' + data)
+            //console.log('uniqueArray' + uniqueArray);
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="removeDuplicateElement()">remove duplicates</button>
+</body>
+</html>

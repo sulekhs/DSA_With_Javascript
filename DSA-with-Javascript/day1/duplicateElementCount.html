@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [50,60,55,50,82,84,41,42,41,82,41];
+
+        function countDuplicateElement(){//sahnc //sushl wnj
+            //using forOF
+            // let duplicateValueCount = {}
+            // for (const element of data) {
+            //     if(duplicateValueCount[element]){
+            //         duplicateValueCount[element] += 1;
+            //     }else{
+            //         duplicateValueCount[element] = 1
+            //     }
+            // }
+            // console.log(duplicateValueCount)
+
+            //using forEach
+            // let duplicateValuesCount = {};
+            // data.forEach((val) => duplicateValuesCount[val] = (duplicateValuesCount[val] || 0) + 1);
+            // console.log('old array' + data)
+            // console.log(JSON.stringify(duplicateValuesCount))
+
+            //using reduce
+            // console.log('before ' + data)
+            // let duplicateValuesCount = {};
+            // duplicateValuesCount = data.reduce((acc, val) => {
+            //     acc[val] = (acc[val] || 0) + 1;
+            //     return acc;
+            // }, {})
+            // console.log('after ' + JSON.stringify(duplicateValuesCount));
+
+            //using Set, map and filter
+            // const uniqueArray = [...new Set(data)];
+            // let obj = {}
+            // const count = uniqueArray.map(element => 
+            //     obj = { [element]: data.filter(el => el === element).length }
+            // )
+            // console.log(count)
+
+            //using indexOf first and last works with sorted array
+            // let duplicateValueCount = {};
+            // data.sort()
+            // for (let i = 0; i < data.length; i++) {
+            //     let arr_first_index = data.indexOf(data[i]);
+            //     let arr_last_index = data.lastIndexOf(data[i]);
+            //     i = arr_last_index
+            //     let frequency = arr_last_index - arr_first_index + 1
+            //     if(frequency >= 2){
+            //         //console.log(data[i] + " " + frequency)
+            //         duplicateValueCount = { [data[i]]: frequency }
+            //         console.log(duplicateValueCount)
+            //     }
+            // }
+            
+            //using one for loop and object
+            // let duplicates = {}
+            // for (let i = 0; i < data.length; i++) {
+            //     duplicates[data[i]] = (duplicates[data[i]] || 0) + 1;
+            // }
+            // console.log(duplicates)
+
+            //using two for loops not working correctly
+            // let duplicateValues = {}
+            // for (let i = 0; i < data.length; i++) {
+            //     for (let j = i+1; j < data.length; j++) {
+            //         if(data[i] === data[j]){
+            //             duplicateValues[data[i]] = (duplicateValues[data[i]] || 0) + 1
+            //         }
+            //     }
+            // }
+            // console.log(duplicateValues);
+
+            //using for loops print count of repeated numbers works only if number is repeated twice
+            // let count = 0;
+            // for (let i = 0; i < data.length; i++) {
+            //     for (let j = i+1; j < data.length; j++) {
+            //         if(data[i] === data[j]){
+            //             count++
+            //             break;
+            //         }
+            //     }
+            // }
+            // console.log(count)
+            
+            // using filter works only if element is repeated twice and not more than that
+            // let duplicateValuesArray = [];
+            // console.log('before ' + data)
+            // duplicateValuesArray = data.filter((item, index) => {
+            //     return data.indexOf(item) !== index
+            // });
+            // console.log('after ' + duplicateValuesArray)
+        
+        }
+    </script>
+</head>
+<body>
+    <button onclick="countDuplicateElement()">count duplicates</button>
+</body>
+</html>

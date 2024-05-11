@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [50,60,55,78,90,84,65,42,41,82];
+
+        function getNewElement(){
+            let position = parseInt(document.getElementById('position').value);
+            console.log(typeof position)
+            let newELement = document.getElementById('newElement').value;
+            newELement = parseInt(newELement)
+            for (let i = data.length - 1; i>=0; i--) {
+                if(i>=position){
+                    data[i+1]=data[i];
+                    if(i===position){
+                        data[i]=newELement;
+                    }
+                }
+            }
+            console.log(data);
+            //same thing can be done using splice
+            //data.splice(position, 0, newElement);
+            //console.log(data);
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="position" placeholder="enter position.." />
+    <input type="text" id="newElement" placeholder="enter element..." />
+    <button onclick="getNewElement()">Get element</button>
+</body>
+</html>
